@@ -22,5 +22,7 @@ class MainActivity : AppCompatActivity() {
         // todo weryfikacja logowania
         Navigator.navigate(supportFragmentManager, DashBoardFragment())
 
+
+
     }
 }
