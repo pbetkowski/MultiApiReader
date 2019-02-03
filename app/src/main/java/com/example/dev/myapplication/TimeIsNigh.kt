@@ -71,7 +71,8 @@ class TimeIsNigh: Fragment() {
 
     private fun getDate(): String {
         val day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-        val month = Calendar.getInstance().get(Calendar.MONTH+1)
+        val x: IntArray = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+        val month = x[Calendar.getInstance().get(Calendar.MONTH)]
         val year = Calendar.getInstance().get(Calendar.YEAR)
 
         if (month<10) {

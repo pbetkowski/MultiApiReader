@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="300dp">
-
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@drawable/layout_border"
+                android:layout_height="200dp">
 
 
     <TextView android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/timeText"
-                    android:text="asd"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:textColor="#18FFFF"
-/>
+              android:layout_height="50dp"
+              android:id="@+id/timeText"
+              android:text="asd"
+              android:textSize="30dp"
+              android:layout_marginTop="5dp"
+              android:gravity="center"
+              android:textColor="#18FFFF"
+    />
 
     <TextView android:layout_width="match_parent"
               android:layout_height="50dp"
               android:id="@+id/timeText2"
               android:layout_below="@+id/timeText"
               android:text="asd"
-              android:textSize="20dp"
+              android:textSize="40dp"
+              android:layout_marginTop="5dp"
               android:gravity="center"
               android:textColor="#18FFFF"
     />
@@ -30,17 +32,11 @@
               android:id="@+id/timeText3"
               android:layout_below="@+id/timeText2"
               android:text="asd"
-              android:textSize="20dp"
+              android:textSize="30dp"
+              android:layout_marginTop="5dp"
               android:gravity="center"
               android:textColor="#18FFFF"
     />
-
-    <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/timeText3"
-            android:background="#ffffff"/>
-
 
 
 </RelativeLayout>

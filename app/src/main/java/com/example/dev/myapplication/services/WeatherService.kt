@@ -1,6 +1,7 @@
 package com.example.dev.myapplication.services
 
 import com.example.dev.myapplication.model.CurrencyEntity
+import com.example.dev.myapplication.model.WeatherEntity
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -10,24 +11,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Headers
 
-interface MainService {
+interface WeatherService {
 
-//    @Headers("Accept: application/json", "Content-Type: application/json")
-//    @GET("http://api.nbp.pl/api/exchangerates/rates/A/USD?format-json")
-//    fun getUSD(): Observable<List<WMSClients>>
-//
-    @Headers("Accept: application/json", "Content-Type: application/json")
-    @GET("http://api.nbp.pl/api/exchangerates/rates/A/USD?format-json")
-    fun getUSD(): Observable<CurrencyEntity>
 
     @Headers("Accept: application/json", "Content-Type: application/json")
-    @GET("http://api.nbp.pl/api/exchangerates/rates/A/EUR?format-json")
-    fun getEUR(): Observable<CurrencyEntity>
-
+    @GET("https://api.darksky.net/forecast/key/49.807621,19.055840")
+    fun getTemperature(): Observable<WeatherEntity>
 
     companion object {
 
-        fun initialize() : MainService{
+        fun initialize() : WeatherService{
 
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
@@ -37,9 +30,9 @@ interface MainService {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
-                .baseUrl("http://api.nbp.pl/api/exchangerates/")
+                .baseUrl("https://api.darksky.net/forecast/")
                 .build()
-            return retrofit.create(MainService::class.java)
+            return retrofit.create(WeatherService::class.java)
         }
     }
 }

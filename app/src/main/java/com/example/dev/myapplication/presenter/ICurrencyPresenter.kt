@@ -1,16 +1,14 @@
 package com.example.dev.myapplication.presenter
 
 import android.widget.TextView
-import com.example.dev.myapplication.DataProvider.USDCurrency
-import com.example.dev.myapplication.DataProvider.USDRate
-import com.example.dev.myapplication.services.MainService
+import com.example.dev.myapplication.services.CurrencyService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class ICurrencyPresenter(var viewer: CurrencyPresenter.CurrencyView) : CurrencyPresenter {
 
 
-    private val service = MainService.initialize()
+    private val service = CurrencyService.initialize()
 
     override fun getUSD(text: TextView, text2: TextView) {
         service.getUSD()
